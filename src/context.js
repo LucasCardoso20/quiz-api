@@ -36,10 +36,12 @@ const AppProvider = ({ children }) => {
         setLoading(false)
         setWaiting(false)
         setError(false)
-      }
-    }else{
+      }else{
       setWaiting(true)
       setError(true)
+      }
+    } else{
+      setWaiting(true)
     }
   }
 
@@ -85,7 +87,7 @@ const AppProvider = ({ children }) => {
 
     const tempUrl = 'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
   
-    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&cateogory=${table[category]}&type=multiple`
+    const url = `${API_ENDPOINT}amount=${amount}&difficulty=${difficulty}&category=${table[category]}&type=multiple`
   
     fetchQuestions(url)
   }
